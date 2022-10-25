@@ -1,13 +1,8 @@
 import subprocess
-
 import sys
-
 import get_pip
-
 import os
-
 import importlib
-
 import contextlib
 
 
@@ -15,7 +10,6 @@ import contextlib
 def install(package):
 
     '''
-    
     installs a package using pip
 
 
