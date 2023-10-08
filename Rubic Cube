@@ -1,0 +1,24 @@
+class RubiksCube:
+    def __init__(self):
+        # Initialize a solved Rubik's Cube
+        self.cube = [["R", "R", "R"],
+                     ["R", "R", "R"],
+                     ["R", "R", "R"]]
+
+    def rotate_U(self):
+        # Perform a clockwise rotation of the upper face (U)
+        self.cube[0][0], self.cube[0][2] = self.cube[0][2], self.cube[0][0]
+        self.cube[0][1], self.cube[1][0] = self.cube[1][0], self.cube[0][1]
+        self.cube[1][0], self.cube[1][2] = self.cube[1][2], self.cube[1][0]
+        self.cube[1][2], self.cube[2][1] = self.cube[2][1], self.cube[1][2]
+        self.cube[2][1], self.cube[2][0] = self.cube[2][0], self.cube[2][1]
+
+    def display(self):
+        # Display the current state of the cube
+        for row in self.cube:
+            print(" ".join(row))
+
+# Create a Rubik's Cube instance and perform a move
+cube = RubiksCube()
+cube.rotate_U()
+cube.display()
